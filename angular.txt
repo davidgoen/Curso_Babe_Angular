@@ -38,3 +38,40 @@ Tambien se puede hacer el import de bootstrap directamente en el style.css con e
 
 Ejecutar el typescript
 ..\node_modules\.bin\ts-node <nombrefich.ts>
+
+app.module.ts es el que se encarga de arrancar el modulo de bootstrap
+bootstrap: [AppComponent]
+
+Generar se usa el comando: "ng g"
+    Crear un core: ng generate module core -> no relacciona los modulos entre los que estan ya creados, para enlazarlos hay que importarlo
+    desde el modulo principal, se importa en app.module en "Imports":
+    imports: [
+        BrowserModule,
+        AppRoutingModule,
+        CoreModule
+    ]
+para crear un componente "ng g c"
+El componente es un objeto html que se tiene que identificar con una etiqueta esa etiqueta esta en <nombrcomponte>.component.js
+    @Component({
+        selector: 'bbl-cabeza',
+        templateUrl: './cabeza.component.html',
+        styleUrls: ['./cabeza.component.css']
+    })
+
+Para exportar un componente dentro de una carpeta creada "core" en su core.modules.ts hay que poner un exports  
+ exports: [
+    PieComponent
+  ]
+
+
+Se puede declarar unavariable como un string que es una ruta y se le pone entre corchetes en el [src] en el html y espera
+que venga una variable de angular
+<img class="img-fluid" alt="Angular Logo" [src]= logo>
+
+Enrutamiento-> carga componentes al dar click en un menu
+app-routing.module.ts
+Las rutas que usan estane n el array: const routes: Routes = []; dentro de app-routing.module.ts
+
+ng g c inicio/inicio --flat -it-is -> te crea el componente sin carpeta propia, debajo del padre
+
+crear de forma enrutada ng g m catalogo --routing
