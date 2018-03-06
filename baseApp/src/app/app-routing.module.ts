@@ -6,8 +6,8 @@ import { AboutComponent } from './about/about.component';
 const routes: Routes = [
   { path: 'inicio', component: InicioComponent },
   { path: 'about', component: AboutComponent },
-  { path: '', pathMatch: 'full', redirectTo: 'inicio' },
-  { path: 'catalogo', loadChildren: './catalogo/catalogo.module#CatalogoModule' }
+  { path: 'catalogo', loadChildren: './catalogo/catalogo.module#CatalogoModule' },
+  { path: '', pathMatch: 'full', redirectTo: 'inicio' }
 ];
 
 @NgModule({

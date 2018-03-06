@@ -12,15 +12,14 @@ import { CatalogoComponent } from './catalogo/catalogo.component';
 
 @NgModule({
   declarations: [
-    AppComponent,
-    InicioComponent,
-    AboutComponent,
-    CatalogoComponent
+    AppComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
-    CoreModule
+    CoreModule,
+    InicioModule,
+    AboutModule
   ],
   providers: [],
   bootstrap: [AppComponent]
