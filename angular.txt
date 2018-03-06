@@ -34,3 +34,7 @@ En angular-cli.json en el array de style se pone el css de bootstrap:
       ],
 SIEMPRE LOS ESTILOS DE LA LIBRERIA Y LUEGO EL ESTILO PROPIO
 Tambien se puede hacer el import de bootstrap directamente en el style.css con el @import arriba del todo
+-------------------------------------
+
+Ejecutar el typescript
+..\node_modules\.bin\ts-node <nombrefich.ts>
