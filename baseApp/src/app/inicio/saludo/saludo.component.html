@@ -1,0 +1,24 @@
+<div class="card">
+  <div class="card-header">
+    Binding
+  </div>
+  <div class="card-body">
+    <div class="form-group">
+      <label for=""></label> 
+      <input type="text" name="nombre" id="nombre" class="form-control" placeholder="" [(ngModel)]='sNombre'>
+      <small id="helpId" class="text-muted">Nombres y apellidos</small>
+    </div>
+    <button type="button" class="btn btn-primary" (click)="btnBorrar()">Borrar</button>
+  </div>
+  <div class="card-footer text-muted">
+    <p>Hola {{ sNombre.toUpperCase() }}</p>
+    <p>2234 * 2345 = {{ 2234 * 2345 }}</p>
+    <p>{{ user|json }}</p>
+  </div>
+</div>
+
+<!--operador de eventos entre parentesis  (click)="btnBorrar()" 
+  operador de propiedades []
+operador de doble binding [()]
+[(ngModel)]='sNombre' Permite que la variable model cambie de valor cada vez que la modifiques en el navegador
+operador de expresiones locales -->

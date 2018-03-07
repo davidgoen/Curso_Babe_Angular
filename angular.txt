@@ -75,3 +75,18 @@ Las rutas que usan estane n el array: const routes: Routes = []; dentro de app-r
 ng g c inicio/inicio --flat -it-is -> te crea el componente sin carpeta propia, debajo del padre
 
 crear de forma enrutada ng g m catalogo --routing
+
+
+
+Pruebas unitarias: ng test
+Para cada componente se hace un describe
+metodo TestBed -> tiene una funcion configuretestingmodule -> configura un modulo para poder testear un componente 
+    hace que el componente en la fase de testing resida en el modulo de mentira
+
+Ficehro spec es el encargado de hacer los test
+Crea el componenete instanciando el fixture
+beforeEach(() => {
+    fixture = TestBed.createComponent(AboutComponent);
+    component = fixture.componentInstance;
+    fixture.detectChanges();
+  });
