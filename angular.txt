@@ -111,3 +111,4 @@ Guardas en i el valor de index del array para tener en cuenta la posicion
 
 Lenguajes de templates:
 {{ expresion | pipe }}
+nuevo
