@@ -7,7 +7,8 @@ import { Component, OnInit, Input, Output, EventEmitter} from '@angular/core';
 })
 export class HijoComponent implements OnInit {
   @Input() nombre: string;
-  @Output() respuesta: EventEmitter<any>;
+  @Output() respuesta: EventEmitter<string>;
+  miNombre: string;
   constructor() {
     this.respuesta = new EventEmitter();
   }
@@ -16,7 +17,7 @@ export class HijoComponent implements OnInit {
   }
 
   btnRespuesta() {
-    this.respuesta.emit();
+    this.respuesta.emit(this.miNombre);
   }
 
 }

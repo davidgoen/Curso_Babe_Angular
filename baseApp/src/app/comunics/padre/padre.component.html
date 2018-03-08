@@ -10,7 +10,7 @@
       </div>
       <!-- <button type="button" class="btn btn-primary" (click)="btnBorrar()">Borrar</button> -->
     </div>
-    <bbl-hijo [nombre] = "sNombre" (respuesta)="respuestaHijo()"></bbl-hijo>
+    <bbl-hijo [nombre] = "sNombre" (respuesta)="respuestaHijo($event)"></bbl-hijo>
     <div class="card-footer text-muted">
       <p>Mi hijo se llama {{ sNombre }}</p>
     </div>

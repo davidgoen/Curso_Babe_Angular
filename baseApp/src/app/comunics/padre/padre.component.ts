@@ -12,7 +12,7 @@ export class PadreComponent implements OnInit {
   ngOnInit() {
   }
 
-  respuestaHijo() {
-    this.sNombre = '';
+  respuestaHijo(nombreHijo) {
+    this.sNombre = nombreHijo;
   }
 }

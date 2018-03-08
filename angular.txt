@@ -90,3 +90,24 @@ beforeEach(() => {
     component = fixture.componentInstance;
     fixture.detectChanges();
   });
+
+
+
+-----------------------
+Iterar un array en el html <li class="loquesea" *ngfor="let tarea of sTareas">{{tarea}}</li>
+usa el ngfor para crear una variable tarea que itear sobre sTareas.
+
+*ngIf="" evalua una expresion si es true incorpora lo que marcamos en el DOM si es false no lo incorpora aTareas.lenght
+
+Se pueden hacer *ngIf con templates para crear uno o otro*ngIf="aTareas.lenght; then ideasTemplate else vacioTemplate"
+<ng-template #ideasTemplate>
+<ng-template #vacioTemplate>
+
+Construye sobre la marcha el DOM con lo de *ngIf y *ngfor
+
+<li class="loquesea" *ngfor="let tarea of sTareas; let i = index">{{tarea}}</li> 
+Guardas en i el valor de index del array para tener en cuenta la posicion
+
+
+Lenguajes de templates:
+{{ expresion | pipe }}
