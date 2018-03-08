@@ -71,6 +71,7 @@ que venga una variable de angular
 Enrutamiento-> carga componentes al dar click en un menu
 app-routing.module.ts
 Las rutas que usan estane n el array: const routes: Routes = []; dentro de app-routing.module.ts
+se pone con a-routes y se te autocompleta -> el route eagle
 
 ng g c inicio/inicio --flat -it-is -> te crea el componente sin carpeta propia, debajo del padre
 
@@ -95,6 +96,7 @@ beforeEach(() => {
 
 -----------------------
 Iterar un array en el html <li class="loquesea" *ngfor="let tarea of sTareas">{{tarea}}</li>
+Todo lo que este dentro del div donde se hace la iteracion es lo que se va a repetir
 usa el ngfor para crear una variable tarea que itear sobre sTareas.
 
 *ngIf="" evalua una expresion si es true incorpora lo que marcamos en el DOM si es false no lo incorpora aTareas.lenght
@@ -111,4 +113,56 @@ Guardas en i el valor de index del array para tener en cuenta la posicion
 
 Lenguajes de templates:
 {{ expresion | pipe }}
-nuevo
+    - {{ sNombre | lowercase}}
+
+
+---------Formularios por modelos---------
+crea una carpeta modelos dentro un fichero mastermodels.ts
+dentro de mastermodels: (En vez de hacer con el constructor dentro de la clase como se haria normalmente)
+    -exporta clase Printers con: un constructor que crea las variables publicas id y name.
+    -exporta la interfaz Dpto es donde define las variables y les asigna un valor, lo que se haria dentro del constructor 
+    normalmente
+    export class Printers{
+        contructor(public id:string, public name:string)
+    }
+
+    export interface Dpto{
+        id:string;
+        name:string
+    }
+
+Crea otro modelo, otro fichero dentro de modelos "orderprint.model.ts" recogera datos del formulario: (con todos los datos recogidos)
+    export interface OrderPrintIf{
+        /*nombre: string
+        apellidos: string
+        telefono: string*/
+        user: UserIf
+        printer: Printers (La clase creada antes)
+        iscolor: boolean
+        isclaro: boolean
+        dpto: Dpto
+    }
+
+Como se puede hacer lo de antes con una interfaz ésta la crea en el fichero master.models.ts
+export interfaz UserIf{
+    nombre: string
+    apellidos: string
+    telefono: string
+}
+
+En otro fichero master.data.ts
+    export const aPrinters: Array<PrintersIf>= [
+        {id:'1', name:'HP'},
+        new Printer('2','Lexmark')
+    ];
+
+    export const aDptos: Array<DptoIf>= [
+        {id: '1', nombre: 'Ventas'},
+        {id: '2', nombre: 'Marketing'},
+        {id: '3', nombre: 'Sistemas'},
+        {id: '4', nombre: 'RRHH'}
+    ]
+
+CON [] se manipulan propiedades(en el DOM, en el JS) con {{}} se manipulan atributos (En el .html)
+
+Para que un formulario vadile con [disabled]="formPrinter.invalid", se pone entre corchetes a que es una propiedad de HTML
